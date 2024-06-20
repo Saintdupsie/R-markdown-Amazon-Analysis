@@ -1,10 +1,11 @@
 ---
-title: "Untitled"
-author: "me"
-date: "2024-06-20"
+title: "Analysis of Amazon Dataset"
+author: "Group 5"
+date: "2024-06-19"
 output:
-  word_document: default
-  html_document: default
+  html_document:
+    df_print: paged
+Assignmentt 1: Data Analysis using R Programming
 ---
 
 #1 Print the structure of your dataset
