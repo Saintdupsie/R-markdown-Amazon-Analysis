@@ -33,24 +33,24 @@ print(Newfiltered_amazon)
 # 6 Identify the dependent & independent variables and use reshaping techniques and create a new data frame by joining those variables from your dataset
 {r} dependent_var<-"discounted_price" independent_var<-"actual_price" new_data_frame<-amazon%>% select(dependent_var, all_of(independent_var)) print(new_data_frame)
 {r} reshaped_amazon <-new_data_frame %>% gather(key = "discount_percentage", value = "0.65", all_of(dependent_var)) print(reshaped_amazon)
-8 Remove missing values in your dataset
+7 Remove missing values in your dataset
 {r} cleaned_data<-na.omit(amazon) print(cleaned_data)
-9 Identify and remove duplicated data in your dataset
+8 Identify and remove duplicated data in your dataset
 {r} duplicated_amazon= duplicated(amazon) cleaned_data=amazon[!duplicated_amazon,] print(cleaned_data)
-10 Reorder multiple rows in descending order
+9 Reorder multiple rows in descending order
 {r} sorted<-amazon %>% arrange(desc(amazon$rating_count), desc(amazon$rating), desc(amazon$discount_percentage)) print(sorted)
-11 Rename some of the column names in your dataset
+10 Rename some of the column names in your dataset
 {r} renamed_new = rename(amazon, new_rating=rating, new_rating_count=rating_count) print(renamed_new)
-12 Add new variables in your data frame by using a mathematical function (for e.g. – multiply an existing column by 2 and add it as a new variable to your data frame)
+11 Add new variables in your data frame by using a mathematical function (for e.g. – multiply an existing column by 2 and add it as a new variable to your data frame)
 {r} reshaped_amazon<-reshaped_amazon%>% mutate(double_0.65=0.65*2) print(reshaped_amazon)
-13 Create a training set using random number generator engine
+12 Create a training set using random number generator engine
 ```{r} set.seed(123) train_indices<- sample(seq_len((nrow(amazon))), size = 0.7*nrow(amazon)) train_set <- amazon[train_indices,] test_set <- amazon[-train_indices, ]
 
-# 14 Print the summary statistics of your dataset
+# 13 Print the summary statistics of your dataset
 
 ```{r}
 summary(amazon)
-Use any of the numerical variables from the dataset and perform the following statistical functions Mean, median, mode, range
+#14 Use any of the numerical variables from the dataset and perform the following statistical functions Mean, median, mode, range
 Mean
 {r} numeric_variable <-amazon$rating mean_value<-mean(numeric_variable, na.rm = TRUE) mean(numeric_variable      )
 Median
